@@ -17,8 +17,8 @@ def applicationform(request):#작성 내용 POST방식으로 불러오기
         form=ApplicationForm()
         return render(request,'application.html',{'form':form})
 
-#def update(request,pk):#지원서 수정
-#   application=get_object_or_404(Application, pk=pk)
+def update(request,pk):#지원서 수정
+   application=get_object_or_404(Application, pk=pk)
 
 
 
