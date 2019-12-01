@@ -1,0 +1,26 @@
+<!-- 모든 합격자들의 이름,폰번호,이메일을 보여주는 페이지 -->
+
+<form method='POST'>
+    {% csrf_token %}
+<div class="container">
+    <table class="table table-striped">
+        <thread>
+            <tr>
+                <td><b>이름</b></td>
+                <td><b>전화번호</b></td>
+                <td><b>이메일</b></td>
+            </tr>
+        </thread>
+    
+        <tbody>
+            {% for successfulcandidate in successfulcandidates %}
+            <tr>
+                <td> <a href = "{% url 'account:detail' %}"> {{ successfulcandidate.username }} </a> </td>
+                <td>{{ successfulcandidate.phone_number}}</td>
+                <td>{{ successfulcandidate.email }}</td>
+            </tr>   
+             {% endfor %}
+        </tbody>
+    </table>
+ </div> 
+</form>
